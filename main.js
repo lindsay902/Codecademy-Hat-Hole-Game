@@ -105,7 +105,7 @@ class Field {
 }
 
 const randomField = Field.generateField(5, 5, 25);
-
+console.log(randomField);
 
 const myField = new Field(randomField);
 
