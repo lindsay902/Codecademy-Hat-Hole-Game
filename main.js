@@ -34,17 +34,12 @@ class Field {
       fieldArray.push(rowArray);
     }
     
-    // get a random row, assign it to a var
     const randomRow = Math.floor(Math.random() * width);
-    // get a random column, assign it to a var 
     let randomColumn = Math.floor(Math.random() * height);
-    // if the random row, column combo was [0, 0]
-    if (randomRow === 0 && randomColumn == 0) {
-    // make the random column a 1 instead 
+    if (randomRow === 0 && randomColumn == 0) { 
       randomColumn = 1;
     }
     
-    // reassign the fieldArray element of that coordinate to be a hat instead of whatever it was before
     fieldArray[randomRow][randomColumn] = hat;
     
     fieldArray[0][0] = pathCharacter;
@@ -101,7 +96,6 @@ class Field {
     case fieldCharacter:
         console.log('Keep looking for the hat...');
         this._field[this._y][this._x] = pathCharacter;
-        //console.log(this._field);
         break;
     case pathCharacter:
         console.log('You are stepping on *');
@@ -112,20 +106,9 @@ class Field {
 
 const randomField = Field.generateField(5, 5, 25);
 
-//console.log(randomField);
 
-/*const myField = new Field([[]]);
-
-//console.log(myField); */
 const myField = new Field(randomField);
 
-//console.log(myField.print());
-/*
-const myField = new Field([
-  [pathCharacter, fieldCharacter, hole],
-  [fieldCharacter, hole, fieldCharacter],
-  [fieldCharacter, hat, fieldCharacter],
-]);  */
 
 
 const game = () => {
